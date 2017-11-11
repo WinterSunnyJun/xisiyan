@@ -22,6 +22,30 @@ $(function () {
         $('.index-news-hide dd > .news-hide-item').eq(Now).show().siblings().hide();
     })
     //招商加盟
+    if ($(window).width() >= 780){
+        $('#jms-show').bxSlider({
+            auto:true,
+            slideMargin:30,
+            minSlides:5,
+            maxSlides:5,
+            moveSlides:5,
+            slideWidth:216,
+            autoHover:true
+
+        });
+    }else {
+        $('#jms-show').bxSlider({
+            auto:true,
+            slideMargin:30,
+            minSlides:3,
+            maxSlides:3,
+            moveSlides:3,
+            slideWidth:216,
+            autoHover:true
+
+        });
+    }
+
     $('#jms-show').bxSlider({
         auto:true,
         slideMargin:30,
@@ -66,15 +90,49 @@ $(function () {
 
         // $('.cpxq-pic-btn ol').animate({left:  moveRange + 'px'});
     // })
+    if($(window).width() >= 780){
+        $('.cpxq-pic-btnbox ol').bxSlider({
+            slideMargin:36,
+            minSlides:2,
+            maxSlides:4,
+            moveSlides:1,
+            slideWidth:108
+        })
+    }else {
+        $('.cpxq-pic-btnbox ol').bxSlider({
+            slideMargin:60,
+            minSlides:2,
+            maxSlides:2,
+            moveSlides:1,
+            slideWidth:150
+        })
+    }
 
-    $('.cpxq-pic-btnbox ol').bxSlider({
-        slideMargin:36,
-        minSlides:4,
-        maxSlides:4,
-        moveSlides:1,
-        slideWidth:108
-    })
     $('.cpxq-pic-btnbox .bx-prev').html('');
     $('.cpxq-pic-btnbox .bx-next').html('');
+
+    var nHeight = $('.cpxq-detial p').height();
+    var perRange = $('.cpxq-detial').height();
+    var oPage = Math.ceil(nHeight/perRange);
+    var oCount = 0;
+    $('.cpxq-text-left').click(function () {
+        oCount++;
+        if(oCount > oPage - 1 ){
+            oCount = 0;
+        }
+        $('.cpxq-detial p').css("margin-top",-oCount*perRange);
+    })
+    $('.cpxq-text-right').click(function () {
+        oCount--;
+        if(oCount < 0 ){
+            oCount = oPage - 1;
+        }
+        $('.cpxq-detial p').css("margin-top",-oCount*perRange);
+    })
+
+//    手机导航
+    $('#sj-nav-bar').click(function () {
+        $('.sj-nav-menu').slideToggle();
+    })
 
 })
