@@ -85,19 +85,18 @@ img{
     color: #fac102;
     border-bottom: 2px solid #fac102;
 }
-.nav > li:hover .subnav{
-    display: block;
-}
 .subnav{
     display: none;
     position: absolute;
     left: 0;
-    top: 35px;
+    top: 29px;
     width: 100%;
     line-height: 30px;
     text-align: center;
     font-size: 14px;
     background: #f5f5f5;
+    z-index: 20;
+
 }
 .subnav > li{
     width: 100%;
@@ -442,6 +441,7 @@ img{
 }
 .gywm-model{
     margin-top: 60px;
+    margin-bottom: 60px;
 }
 .gywm-model-textOne{
     position: relative;
@@ -509,6 +509,7 @@ img{
 /*产品中心*/
 .cpzx-body{
     margin-top: 60px;
+    margin-bottom: 60px;
 }
 .cpzx-side{
     width: 280px;
@@ -1103,6 +1104,8 @@ form ul li .icon{
 .jms-show-wrapper{
     margin-top: 60px;
     text-align: center;
+    margin-bottom: 100px;
+
 }
 .jms-show-wrapper h3{
     position: relative;

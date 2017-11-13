@@ -1,4 +1,11 @@
 $(function () {
+    $('.nav li').hover(function () {
+        $(this).find('.subnav').show();
+    },function () {
+        $(this).find('.subnav').hide();
+    })
+    
+    
     //banner
     $('.banner-list').bxSlider({
         auto:true,
